@@ -81,7 +81,7 @@ setInterval(function(){
       if(obj.last_check>obj.first_check && obj.used<obj.limit){
         obj.used+=obj.last_check-obj.first_check;
         obj.first_check = now;
-        console.log(t+" used "+obj.used);
+        //console.log(t+" used "+obj.used);
         mod = true;
       }else{
         obj.last_check = 0;
