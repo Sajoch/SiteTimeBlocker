@@ -43,8 +43,16 @@ function check_tab(tabId, isclosed){
   if(tab.pinned){
     return;
   }
-  var hostrx = ":\/\/(.*)\/";
-  var host = tab.url.match(hostrx)[1];
+  var br1=tab.url.indexOf("://");
+  if(br1==-1){
+	  return;
+  }
+  var br = tab.url.substr(br1+3);
+  var br2=br.indexOf("/");
+  if(br2==-1){
+	  return;
+  }
+  var host=br.substr(0,br2);
   if(typeof blocked_sites[host] == "object"){
     if(blocked_sites[host].used>=blocked_sites[host].limit && !isclosed){
       chrome.tabs.remove(tabId);
