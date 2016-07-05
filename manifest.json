@@ -1,0 +1,11 @@
+{
+	"manifest_version": 2,
+	"name": "SiteTimeBlocker",
+	"description": "This extension counts the time that you spend on the page. You can set a limit on a page. If you exceed the time, it will close tabs.",
+	"version": "1.4",
+	"background": {
+		"scripts": ["class.js","storage.js","background.js"]
+	},
+  "options_page": "options.html",
+	"permissions": ["tabs","storage"]
+}
